@@ -9,9 +9,20 @@ public class ListaDeContasCorrentes
         _itens = new ContaCorrente[tamanhoInicial];
     }
 
+    public ContaCorrente this[int indice]
+    {
+        get { return RecuperarContaIndice(indice); }
+    }
+
     private ContaCorrente[] _itens = null;
     private int _proximaPosicao = 0;
-
+    public int Tamanho
+    {
+        get
+        {
+            return _proximaPosicao;
+        }
+    }
     public void Adicionar(ContaCorrente conta)
     {
         Console.WriteLine($"Conta adicionado na posição {_proximaPosicao}");
@@ -50,6 +61,15 @@ public class ListaDeContasCorrentes
                 Console.WriteLine($"Conta: {_itens[i].Conta}");
             }
         }
+    }
+
+    public ContaCorrente RecuperarContaIndice(int indice)
+    {
+        if (indice < 0 || indice >= _proximaPosicao)
+        {
+            throw new ArgumentOutOfRangeException(nameof(indice));
+        }
+        return _itens[indice];
     }
 
     private void VerificarCapacidade(int tamanhoNecessario)
