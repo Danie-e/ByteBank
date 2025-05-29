@@ -12,6 +12,7 @@ void TestaArrayDeContas()
     listaDeContas.Adicionar(new ContaCorrente(003));
     listaDeContas.Adicionar(new ContaCorrente(004));
     listaDeContas.Adicionar(new ContaCorrente(005));
-    
-    
+    listaDeContas.Adicionar(new ContaCorrente(006));
+
+
 }
