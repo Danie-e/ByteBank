@@ -134,7 +134,40 @@ void ListarContas()
         Console.ReadKey();
     }
 }
+List<ContaCorrente> _listaDeContas2 = new List<ContaCorrente>()
+{
+    new ContaCorrente(874),
+    new ContaCorrente(874),
+    new ContaCorrente(874)
+};
 
+List<ContaCorrente> _listaDeContas3 = new List<ContaCorrente>()
+{
+    new ContaCorrente(951),
+    new ContaCorrente(321),
+    new ContaCorrente(719)
+};
+
+_listaDeContas2.AddRange(_listaDeContas3);
+_listaDeContas2.Reverse();
+
+for (int i = 0; i < _listaDeContas2.Count; i++)
+{
+    Console.WriteLine($"Indice[{i}] = Conta [{_listaDeContas2[i].Conta}]");
+}
+
+var range = _listaDeContas3.GetRange(0, 1);
+for (int i = 0; i < range.Count; i++)
+{
+    Console.WriteLine($"Indice[{i}] = Conta [{range[i].Conta}]");
+}
+
+Console.WriteLine();
+_listaDeContas3.Clear();
+for (int i = 0; i < _listaDeContas3.Count; i++)
+{
+    Console.WriteLine($"Indice[{i}] = Conta [{_listaDeContas3[i].Conta}]");
+}
 
 Generica<int> teste1 = new Generica<int>();
 teste1.MostrarMensagem(0);
@@ -148,3 +181,4 @@ public class Generica<T>
         Console.WriteLine($"Exibindo {t}");
     }
 }
+
