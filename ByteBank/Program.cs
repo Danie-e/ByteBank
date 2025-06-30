@@ -135,29 +135,12 @@ void PesquisarConta()
 }
 ContaCorrente ConsultaPorCPFTitular(string? cpf)
 {
-    ContaCorrente conta = null;
-    for (int i = 0; i < _listaDeContas.Count; i++)
-    {
-        if (_listaDeContas[i].Titular.Cpf.Equals(cpf))
-        {
-            conta = _listaDeContas[i];
-        }
-    }
-    return conta;
+    return _listaDeContas.Where(conta => conta.Titular.Cpf == cpf).FirstOrDefault();
 }
 
 ContaCorrente ConsultaPorNumeroConta(string? numeroConta)
 {
-    ContaCorrente conta = null;
-    for (int i = 0; i < _listaDeContas.Count; i++)
-    {
-        if (_listaDeContas[i].Conta.Equals(numeroConta))
-        {
-            conta = _listaDeContas[i];
-        }
-    }
-
-    return conta;
+    return _listaDeContas.Where(conta => conta.Conta == numeroConta).FirstOrDefault();
 }
 
 void OrdenarContas()
