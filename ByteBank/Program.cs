@@ -127,12 +127,40 @@ void PesquisarConta()
                 Console.ReadKey();
                 break;
             }
+        case 3:
+            {
+                Console.Write("Informe o nomero da agencia: ");
+                int agencia = int.Parse(Console.ReadLine());
+                List<ContaCorrente> consultaAgencia = ConsultaPorAgencia(agencia);
+                ExibirListaDeContas(consultaAgencia);
+                Console.ReadKey();
+                break;
+            }
         default:
             Console.WriteLine("Opção não implementada.");
             break;
     }
 
 }
+
+void ExibirListaDeContas(List<ContaCorrente> consultaAgencia)
+{
+    if (consultaAgencia is not null)
+        foreach (var conta in consultaAgencia)
+            Console.WriteLine(conta.ToString());
+    else
+        Console.WriteLine("Consulta não retornou dados");
+}
+
+List<ContaCorrente> ConsultaPorAgencia(int numeroAgencia)
+{
+    var consulta = (
+        from conta in _listaDeContas
+        where conta.Numero_agencia == numeroAgencia
+        select conta).ToList();
+    return consulta;
+}
+
 ContaCorrente ConsultaPorCPFTitular(string? cpf)
 {
     return _listaDeContas.Where(conta => conta.Titular.Cpf == cpf).FirstOrDefault();
