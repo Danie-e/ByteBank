@@ -1,5 +1,6 @@
 ﻿using ByteBank.Atendimento;
 using ByteBank.Modelos.Conta;
+using System.Text;
 
 internal class Program
 {
@@ -30,9 +31,9 @@ internal class Program
 
     static public void EscreverBuffer(byte[] buffer)
     {
-        foreach (byte item in buffer)
-        {
-            Console.Write(item);
-        }
+        var utf8 = new UTF8Encoding();
+        string texto = utf8.GetString(buffer);
+        Console.Write(texto);
     }
+
 }
