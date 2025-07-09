@@ -1,10 +1,11 @@
-﻿using System.Text;
+﻿using ByteBank.Modelos.Conta;
+using System.Text;
 
 namespace ByteBank.Util;
 
 partial class Program
 {
-   static public void LerArquivoTexto(string enderecoArquivo)
+    static public void LerArquivoTexto(string enderecoArquivo)
     {
         using (FileStream fluxoArquivo = new(enderecoArquivo, FileMode.Open))
         {
@@ -24,4 +25,6 @@ partial class Program
         string texto = utf8.GetString(buffer);
         Console.Write(texto);
     }
+
+
 }

@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ByteBank.Modelos.Conta;
+using ByteBank.Util;
+using System.ComponentModel.DataAnnotations;
 
 partial class Program
 {
     private static void Main(string[] args)
     {
+        ListaDeContasCorrentes _listaDeContas = new ListaDeContasCorrentes();
         Console.WriteLine("Boas Vindas ao ByteBank Atendimento.!");
 
         string enderecoArquivo = "contas.txt";
@@ -21,17 +24,25 @@ partial class Program
             while (!leitor.EndOfStream)
             {
                 var linha = leitor.ReadLine();
-                Console.WriteLine(linha);
+                ContaCorrente conta = ConverteStringParaContaCorrente(linha);
+                _listaDeContas.Adicionar(conta);
+                Console.WriteLine(conta.ToString());
             }
 
+            //new Atendimento().AtendimentoCliente();
         }
 
-        //        List<ContaCorrente> _listaDeContas = new List<ContaCorrente>()
-        //{
-        //    new ContaCorrente(95) {Saldo=100,Titular=new(){Nome="Daniela",Profissao="Dev",Cpf="123456789" } },
-        //    new ContaCorrente(95) {Saldo=200,Titular=new(){Nome="Julio",Profissao="Tester",Cpf="789456123" }},
-        //    new ContaCorrente(94) {Saldo=60,Titular=new(){Nome="Isabela",Profissao="Desiner",Cpf="741258963" }}
-        //};
-        //        new Atendimento().AtendimentoCliente();
+        static ContaCorrente ConverteStringParaContaCorrente(string linha)
+        {
+            string[] campos = linha.Split(',');
+            ContaCorrente conta = new(int.Parse(campos[0]))
+            {
+                Saldo = double.Parse(campos[2].Replace('.', ',')),
+                Titular = new() { Nome = campos[3] }
+            };
+            return conta;
+        }
+
+
     }
 }

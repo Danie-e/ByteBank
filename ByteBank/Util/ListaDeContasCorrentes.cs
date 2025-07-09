@@ -25,7 +25,7 @@ public class ListaDeContasCorrentes
     }
     public void Adicionar(ContaCorrente conta)
     {
-        Console.WriteLine($"Conta adicionado na posição {_proximaPosicao}");
+        //Console.WriteLine($"Conta adicionado na posição {_proximaPosicao}");
         VerificarCapacidade(_proximaPosicao + 1);
         _itens[_proximaPosicao] = conta;
         _proximaPosicao++;
@@ -76,7 +76,7 @@ public class ListaDeContasCorrentes
     {
         if (_itens.Length >= tamanhoNecessario)
             return;
-        Console.WriteLine("Aumentando capacidade do array");
+        //Console.WriteLine("Aumentando capacidade do array");
         ContaCorrente[] novoArray = new ContaCorrente[tamanhoNecessario];
 
         for (int i = 0; i < _itens.Length; i++)
