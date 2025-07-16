@@ -6,6 +6,9 @@ partial class Program
 {
     private static void Main(string[] args)
     {
+        //EscritaBinaria();
+        LeituraBinaria();
+
         ListaDeContasCorrentes _listaDeContas = new ListaDeContasCorrentes();
         Console.WriteLine("Boas Vindas ao ByteBank Atendimento.!");
 
@@ -26,23 +29,11 @@ partial class Program
                 var linha = leitor.ReadLine();
                 ContaCorrente conta = ConverteStringParaContaCorrente(linha);
                 _listaDeContas.Adicionar(conta);
-                Console.WriteLine(conta.ToString());
+                //Console.WriteLine(conta.ToString());
             }
 
             //new Atendimento().AtendimentoCliente();
         }
-
-        static ContaCorrente ConverteStringParaContaCorrente(string linha)
-        {
-            string[] campos = linha.Split(',');
-            ContaCorrente conta = new(int.Parse(campos[0]))
-            {
-                Saldo = double.Parse(campos[2].Replace('.', ',')),
-                Titular = new() { Nome = campos[3] }
-            };
-            return conta;
-        }
-
 
     }
 }

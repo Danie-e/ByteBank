@@ -1,8 +1,6 @@
 ﻿using ByteBank.Modelos.Conta;
 using System.Text;
 
-namespace ByteBank.Util;
-
 partial class Program
 {
     static public void LerArquivoTexto(string enderecoArquivo)
@@ -19,6 +17,7 @@ partial class Program
             }
         }
     }
+
     static public void EscreverBuffer(byte[] buffer)
     {
         var utf8 = new UTF8Encoding();
@@ -26,5 +25,32 @@ partial class Program
         Console.Write(texto);
     }
 
+    static ContaCorrente ConverteStringParaContaCorrente(string linha)
+    {
+        string[] campos = linha.Split(',');
+        ContaCorrente conta = new(int.Parse(campos[0]))
+        {
+            Saldo = double.Parse(campos[2].Replace('.', ',')),
+            Titular = new() { Nome = campos[3] }
+        };
+        return conta;
+    }
+
+    static void LeituraBinaria()
+    {
+        using (var fs = new FileStream("contaCorrente.txt", FileMode.Open))
+        using (var leitor = new BinaryReader(fs))
+        {
+            Int32 agencia = leitor.ReadInt32();
+            Int32 numeroDaConta = leitor.ReadInt32();
+            double saldo = leitor.ReadDouble();
+            string titular = leitor.ReadString();
+
+            Console.WriteLine($@"Agencia: {agencia}
+Numero da conta: {numeroDaConta}
+Saldo: {saldo}
+Titular: {titular}");
+        }
+    }
 
 }
