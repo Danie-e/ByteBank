@@ -18,7 +18,6 @@ partial class Program
                 Console.ReadLine();
             }
         }
-
     }
 
     static void EscritaBinaria()

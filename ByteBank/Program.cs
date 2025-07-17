@@ -7,7 +7,7 @@ partial class Program
     private static void Main(string[] args)
     {
         //EscritaBinaria();
-        LeituraBinaria();
+        UsarStreamDeEntrada();
 
         ListaDeContasCorrentes _listaDeContas = new ListaDeContasCorrentes();
         Console.WriteLine("Boas Vindas ao ByteBank Atendimento.!");
