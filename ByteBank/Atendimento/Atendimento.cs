@@ -7,16 +7,13 @@ namespace ByteBank.Atendimento;
 internal class Atendimento
 {
 
-    private List<ContaCorrente> _listaDeContas = new List<ContaCorrente>(){
-    new ContaCorrente(95 ){Saldo=100,Titular = new Cliente{Cpf="11111",Nome ="Henrique"}},
-    new ContaCorrente(95){Saldo=200,Titular = new Cliente{Cpf="22222",Nome ="Pedro"}},
-    new ContaCorrente(94){Saldo=60,Titular = new Cliente{Cpf="33333",Nome ="Marisa"}},
-    };
+    private List<ContaCorrente> _listaDeContas = new List<ContaCorrente>();
 
-    public void AtendimentoCliente()
+    public void AtendimentoCliente(List<ContaCorrente> listaDeContas)
     {
         try
         {
+            _listaDeContas = listaDeContas;
             char opcao = '0';
             while (opcao != '6')
             {

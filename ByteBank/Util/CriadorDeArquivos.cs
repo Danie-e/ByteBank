@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-partial class Program
+﻿partial class Program
 {
     static void CriarArquivo()
     {

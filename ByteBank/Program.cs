@@ -1,15 +1,11 @@
-﻿using ByteBank.Modelos.Conta;
-using ByteBank.Util;
-using System.ComponentModel.DataAnnotations;
+﻿using ByteBank.Atendimento;
+using ByteBank.Modelos.Conta;
 
 partial class Program
 {
     private static void Main(string[] args)
     {
-        //EscritaBinaria();
-        UsarStreamDeEntrada();
-
-        ListaDeContasCorrentes _listaDeContas = new ListaDeContasCorrentes();
+        List<ContaCorrente> _listaDeContas = new();
         Console.WriteLine("Boas Vindas ao ByteBank Atendimento.!");
 
         string enderecoArquivo = "contas.txt";
@@ -18,22 +14,15 @@ partial class Program
         {
             var leitor = new StreamReader(fluxoDeArquivo);
 
-            //var linha = leitor.ReadLine();
-
-            //var texto = leitor.ReadToEnd()
-
-            //var numero = leitor.Read();
-
             while (!leitor.EndOfStream)
             {
                 var linha = leitor.ReadLine();
                 ContaCorrente conta = ConverteStringParaContaCorrente(linha);
-                _listaDeContas.Adicionar(conta);
-                //Console.WriteLine(conta.ToString());
+                _listaDeContas.Add(conta);
             }
 
-            //new Atendimento().AtendimentoCliente();
         }
+        new Atendimento().AtendimentoCliente(_listaDeContas);
 
     }
 }
