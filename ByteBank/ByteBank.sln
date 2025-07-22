@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.36105.23 d17.13
+VisualStudioVersion = 17.13.36105.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBank", "ByteBank.csproj", "{2DB435A6-3DE7-4397-96EF-00169F9D4EF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBank_Modelos", "..\ByteBank_Modelos\ByteBank_Modelos.csproj", "{B0FC2E02-1DBE-47C3-B1AF-052E7AA89C04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2DB435A6-3DE7-4397-96EF-00169F9D4EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DB435A6-3DE7-4397-96EF-00169F9D4EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DB435A6-3DE7-4397-96EF-00169F9D4EF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0FC2E02-1DBE-47C3-B1AF-052E7AA89C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0FC2E02-1DBE-47C3-B1AF-052E7AA89C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0FC2E02-1DBE-47C3-B1AF-052E7AA89C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0FC2E02-1DBE-47C3-B1AF-052E7AA89C04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
