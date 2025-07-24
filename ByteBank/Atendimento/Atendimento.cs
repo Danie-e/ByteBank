@@ -1,5 +1,6 @@
 ﻿using ByteBank.Exceptions;
 using ByteBank.Modelos.Conta;
+using Newtonsoft.Json;
 
 namespace ByteBank.Atendimento;
 
@@ -25,7 +26,8 @@ internal class Atendimento
                 Console.WriteLine("===3 - Remover Conta        ===");
                 Console.WriteLine("===4 - Ordenar Contas       ===");
                 Console.WriteLine("===5 - Pesquisar Conta      ===");
-                Console.WriteLine("===6 - Sair do Sistema      ===");
+                Console.WriteLine("===6 - Exportar Contas      ===");
+                Console.WriteLine("===7 - Sair do Sistema      ===");
                 Console.WriteLine("===============================");
                 Console.WriteLine("\n\n");
                 Console.Write("Digite a opção desejada: ");
@@ -56,6 +58,9 @@ internal class Atendimento
                         PesquisarConta();
                         break;
                     case '6':
+                        ExportarContas();
+                        break;
+                    case '7':
                         EncerrarAplicacao();
                         break;
                     default:
@@ -74,6 +79,40 @@ internal class Atendimento
     {
         Console.WriteLine("Encerando a aplicação");
         Console.ReadKey();
+    }
+
+    private void ExportarContas()
+    {
+        Console.Clear();
+        Console.WriteLine("===============================");
+        Console.WriteLine("===      EXPORTAR CONTAS    ===");
+        Console.WriteLine("===============================");
+        Console.WriteLine("\n");
+        Console.WriteLine("\n");
+        if (_listaDeContas.Count <= 0)
+        {
+            Console.WriteLine("... Não é possivel realizar a exportação.");
+            Console.ReadKey();
+        }
+        else
+        {
+            string json = JsonConvert.SerializeObject(_listaDeContas, Formatting.Indented);
+            try
+            {
+                FileStream fs = new("contas.json", FileMode.Create);
+                using (StreamWriter sw = new(fs))
+                {
+                    sw.WriteLine(json);
+                }
+                Console.WriteLine(@"Arquivo salvo");
+
+            }
+            catch (Exception e)
+            {
+                throw new ByteBankException(e.Message);
+                Console.ReadKey();
+            }
+        }
     }
 
     void PesquisarConta()
