@@ -1,7 +1,7 @@
-﻿using ByteBank.Modelos.Conta;
+﻿using ByteBank_Modelos.Models.ADM.Conta;
 using System.Text;
 
-namespace ByteBank.Util;
+namespace ByteBank_Modelos.Models.Util;
 class LeitorDeArquivo
 {
     static public void LerArquivoTexto(string enderecoArquivo)

@@ -1,21 +1,20 @@
 ﻿
-namespace ByteBank.Modelos.ADM.Funcionarios
+namespace ByteBank_Modelos.Models.ADM.Funcionarios;
+
+public class Diretor : FuncionarioAutenticavel
 {
-    public class Diretor : FuncionarioAutenticavel
+    public Diretor(string cpf) : base(5000, cpf)
     {
-        public Diretor(string cpf) : base(5000, cpf)
-        {
-            Console.WriteLine("Criando DIRETOR");
-        }
+        Console.WriteLine("Criando DIRETOR");
+    }
 
-        public override void AumentarSalario()
-        {
-            this.Salario *= 1.15;
-        }
+    public override void AumentarSalario()
+    {
+        this.Salario *= 1.15;
+    }
 
-        public override double getBonificacao()
-        {
-            return this.Salario * 0.5;
-        }
+    protected internal override double getBonificacao()
+    {
+        return this.Salario * 0.5;
     }
 }

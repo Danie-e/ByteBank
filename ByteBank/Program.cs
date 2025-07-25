@@ -1,5 +1,6 @@
 ﻿using ByteBank.Atendimento;
-using ByteBank.Modelos.Conta;
+using ByteBank_Modelos.Models.ADM.Conta;
+using ByteBank_Modelos.Models.ADM.Funcionarios;
 
 partial class Program
 {
@@ -24,5 +25,23 @@ partial class Program
         }
         new Atendimento().AtendimentoCliente(_listaDeContas);
 
+        
+    }
+
+    public class Estagiario : Funcionario
+    {
+        public Estagiario(double salario, string cpf) : base(salario, cpf)
+        {
+        }
+
+        public override void AumentarSalario()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override double getBonificacao()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

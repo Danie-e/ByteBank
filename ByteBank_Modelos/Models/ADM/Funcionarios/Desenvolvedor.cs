@@ -1,19 +1,18 @@
-﻿namespace ByteBank.Modelos.ADM.Funcionarios
+﻿namespace ByteBank_Modelos.Models.ADM.Funcionarios;
+
+public class Desenvolvedor : Funcionario
 {
-    public class Desenvolvedor : Funcionario
+    public Desenvolvedor(string cpf) : base(3000, cpf)
     {
-        public Desenvolvedor(string cpf) : base(3000, cpf)
-        {
-        }
+    }
 
-        public override void AumentarSalario()
-        {
-            this.Salario *= 0.15;
-        }
+    public override void AumentarSalario()
+    {
+        this.Salario *= 0.15;
+    }
 
-        public override double getBonificacao()
-        {
-            return this.Salario * 0.1;
-        }
+    protected internal override double getBonificacao()
+    {
+        return this.Salario * 0.1;
     }
 }

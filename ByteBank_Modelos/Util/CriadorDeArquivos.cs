@@ -1,4 +1,4 @@
-﻿namespace ByteBank.Util;
+﻿namespace ByteBank_Modelos.Models.Util;
 class CriadorDeArquivos
 {
     static void CriarArquivo()

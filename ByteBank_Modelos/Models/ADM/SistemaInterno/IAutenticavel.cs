@@ -1,7 +1,6 @@
-﻿namespace ByteBank.Modelos.ADM.SistemaInterno
+﻿namespace ByteBank_Modelos.Models.ADM.SistemaInterno;
+
+public interface IAutenticavel
 {
-    public interface IAutenticavel
-    {
-        bool Autenticar(string senha);
-    }
+    bool Autenticar(string senha);
 }

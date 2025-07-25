@@ -1,5 +1,5 @@
 ﻿using ByteBank.Exceptions;
-using ByteBank.Modelos.Conta;
+using ByteBank_Modelos.Models.ADM.Conta;
 using Newtonsoft.Json;
 
 namespace ByteBank.Atendimento;

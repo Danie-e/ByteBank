@@ -1,21 +1,23 @@
-﻿using ByteBank.Modelos.ADM.SistemaInterno;
+﻿using ByteBank_Modelos.Models.ADM.SistemaInterno;
+using ByteBank_Modelos.Models.ADM.Utilitario;
 
 
-namespace ByteBank.Modelos.ADM.Funcionarios
+namespace ByteBank_Modelos.Models.ADM.Funcionarios;
+
+public abstract class FuncionarioAutenticavel : Funcionario, IAutenticavel
 {
-    public abstract class FuncionarioAutenticavel : Funcionario, IAutenticavel
+    public string Senha { get; set; }
+    internal AutenticacaoUtil Autenticador { get; set; }
+
+    public FuncionarioAutenticavel(double salario, string cpf)
+        : base(salario, cpf)
     {
-        public string Senha { get; set; }
 
-        public FuncionarioAutenticavel(double salario, string cpf)
-            : base(salario, cpf)
-        {
+    }
 
-        }
+    public bool Autenticar(string senha)
+    {
+        return Autenticador.ValidarSenha(this.Senha, senha);
 
-        public bool Autenticar(string senha)
-        {
-            return Senha == senha;
-        }
     }
 }
