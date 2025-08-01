@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBank_GeradorDePix", "ByteBank_GeradorDePix.csproj", "{692617A2-03EA-4BC0-A8AE-4CBF1AC6559C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{692617A2-03EA-4BC0-A8AE-4CBF1AC6559C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{692617A2-03EA-4BC0-A8AE-4CBF1AC6559C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{692617A2-03EA-4BC0-A8AE-4CBF1AC6559C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{692617A2-03EA-4BC0-A8AE-4CBF1AC6559C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24A2EF5F-4F7C-4974-96A9-BC1FDBFA7339}
+	EndGlobalSection
+EndGlobal

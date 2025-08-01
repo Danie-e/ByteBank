@@ -15,5 +15,11 @@
     <ProjectReference Include="..\ByteBank_Modelos\ByteBank_Modelos.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="ByteBank_GeradorDePix">
+      <HintPath>..\ByteBank_GeradorDePix\bin\Debug\net8.0\ByteBank_GeradorDePix.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 
 </Project>

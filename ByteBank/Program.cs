@@ -1,4 +1,4 @@
-﻿using ByteBank.Atendimento;
+﻿using ByteBank_GeradorDePix;
 using ByteBank_Modelos.Models.ADM.Conta;
 using ByteBank_Modelos.Models.ADM.Funcionarios;
 
@@ -23,9 +23,15 @@ partial class Program
             }
 
         }
-        new Atendimento().AtendimentoCliente(_listaDeContas);
+        //new Atendimento().AtendimentoCliente(_listaDeContas);
 
-        
+        Console.WriteLine(GeradorPix.GetChavePix());
+        List<string> listaChaves = GeradorPix.GetChavesPix(5);
+        foreach (var chave in listaChaves)
+        {
+            Console.WriteLine(chave);
+
+        }
     }
 
     public class Estagiario : Funcionario
