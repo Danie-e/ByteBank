@@ -8,18 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="GeradorDePIX" Version="1.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ByteBank_Modelos\ByteBank_Modelos.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="ByteBank_GeradorDePix">
-      <HintPath>..\ByteBank_GeradorDePix\bin\Debug\net8.0\ByteBank_GeradorDePix.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 
 </Project>
